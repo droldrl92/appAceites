@@ -1,0 +1,42 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Aceites Esenciales</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content >
+  <div id ="comodin"></div>
+  <h3>Calculadora de Precio<br/> por gota</h3>
+
+    <button ion-button
+            (click) = "showRadio()">
+      Selecciona cuantos ML a calcular
+    </button>
+
+      <ion-label><strong>El número de gotas a calcular es: {{gotas}}</strong></ion-label>
+
+    <button ion-button
+            (click) = "showPrompt()">
+      Introduce el precio del aceite esencial
+    </button>
+
+      <ion-label><strong>El precio del aceite es: ${{precio}}</strong></ion-label>
+
+      <h1>El precio por gota es:</h1>
+      <h2>${{total}}</h2>
+
+    <br>
+    <button ion-button
+          (click)="reiniciar()">
+      Reiniciar Calculadora
+    </button>
+</ion-content>
+
+<ion-footer>
+  <p>Los precios calculados, resultan una recomendación para los socios.</p>
+</ion-footer>

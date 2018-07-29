@@ -1,0 +1,21 @@
+export const Modificadores = [
+    {aceite: "Bergamota"},
+    {aceite: "Cardamomo"},
+    {aceite: "Cilantro"},
+    {aceite: "Eucalipto"},
+    {aceite: "Petitgrane"},
+    {aceite: "Hinojo"},
+    {aceite: "Jazmín"},
+    {aceite: "Lavanda"},
+    {aceite: "Limón"},
+    {aceite: "Mandarina"},
+    {aceite: "Melissa"},
+    {aceite: "Mirra"},
+    {aceite: "Naranja Silvestre"},
+    {aceite: "Pimienta Negra"},
+    {aceite: "Rosa"},
+    {aceite: "Sándalo"},
+    {aceite: "Sándalo Hawaiano"},
+    {aceite: "Semilla de Cilantro"},
+    {aceite: "Toronja"}
+];

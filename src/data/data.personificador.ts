@@ -1,0 +1,23 @@
+export const Personificadores = [
+    {aceite: "Abedul"},
+    {aceite: "Canela"},
+    {aceite:"Cardamomo"},
+    {aceite:"Casia"},
+    {aceite:"Cilantro"},
+    {aceite:"Clavo de Olor"},
+    {aceite:"Gaulteria"},
+    {aceite:"Helicriso"},
+    {aceite:"Hierbabuena"},
+    {aceite:"Jengibre"},
+    {aceite:"Mandarina"},
+    {aceite:"Manzanilla Romana"},
+    {aceite:"Menta(Peppermint)"},
+    {aceite:"Menta Verde(Spearmint)"},
+    {aceite:"Naranja Silvestre"},
+    {aceite:"Pimienta Negra"},
+    {aceite:"Rosa"},
+    {aceite:"Salvia Esclarea"},
+    {aceite:"Semilla de Cilantro"},
+    {aceite:"Vetiver"},
+    {aceite:"Ylang-Ylang"}
+];

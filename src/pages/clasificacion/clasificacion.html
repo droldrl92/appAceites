@@ -1,0 +1,29 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Aceites Esenciales</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Personificadores</ion-label>
+    <ion-select [(ngModel)]="personificadores1" okText="Aceptar" cancelText="Cancelar" multiple="true"
+                placeholder="Selecciona uno." (ionChange)="mostrarCambio()">
+      <ion-option *ngFor="let aceite of personificadores" [value]="aceite.aceite">{{aceite.aceite}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Modificadores</ion-label>
+    <ion-select [(ngModel)]="modificadores1" okText="Aceptar" cancelText="Cancelar" multiple="true"
+                placeholder="Selecciona uno." (ionChange)="mostrarCambio()" >
+      <ion-option *ngFor="let aceite of modificadores" [value]="aceite.aceite">{{aceite.aceite}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+</ion-content>
