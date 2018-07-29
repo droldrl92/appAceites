@@ -60,7 +60,8 @@ export class CalculadoraPage {
       inputs: [
         {
           name: 'precioprompt',
-          placeholder: 'Precio'
+          placeholder: 'Precio',
+          type: 'number'
         },
       ],
       buttons: [
