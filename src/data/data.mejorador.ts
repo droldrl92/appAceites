@@ -1,7 +1,30 @@
 export const Mejoradores = [
-  {
-    aceites: [ "Abedul", "Albahaca", "Arborvitae", "Bergamota", "Canela", "Casia", "Cedro", "Eneldo", "Eucalipto",
-     "Gaulteria", "Geranio", "Petitgrane", "Hierba Limonera", "Incienso", "Jazmín", "Lavanda", "Lima", "Limón",
-     "Mejorana", "Melaleuca", "Melissa", "Orégano", "Pachulí", "Ravensara", "Romero", "Rosa", "Tomillo", "Toronja" ]
-  }
+        {aceite:"Abedul"},
+        {aceite:"Albahaca"},
+        {aceite:"Arborvitae"},
+        {aceite:"Bergamota"},
+        {aceite:"Canela"},
+        {aceite:"Casia"},
+        {aceite:"Cedro"},
+        {aceite:"Eneldo"},
+        {aceite:"Eucalipto"},
+        {aceite:"Gaulteria"},
+        {aceite:"Geranio"},
+        {aceite:"Petitgrane"},
+        {aceite:"Hierba Limonera"},
+        {aceite:"Incienso"},
+        {aceite:"Jazmín"},
+        {aceite:"Lavanda"},
+        {aceite:"Lima"},
+        {aceite:"Limón"},
+        {aceite:"Mejorana"},
+        {aceite:"Melaleuca"},
+        {aceite:"Melissa"},
+        {aceite:"Orégano"},
+        {aceite:"Pachulí"},
+        {aceite:"Ravensara"},
+        {aceite:"Romero"},
+        {aceite:"Rosa"},
+        {aceite:"Tomillo"},
+        {aceite:"Toronja"}
 ];

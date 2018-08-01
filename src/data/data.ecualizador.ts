@@ -1,7 +1,28 @@
 export const Ecualizadores = [
-  {
-    aceites: [ "Abeto Blanco", "Albahaca", "Arborvitae", "Baya de Enebro", "Bergamota", "Cedro", "Cilantro", "Ciprés",
-     "Geranio", "Hierba Limonera", "Hinojo", "Incienso", "Jazmín", "Jengibre", "Lavanda", "Lima", "Mejorana",
-     "Melaleuca", "Melissa", "Mirra", "Nardo", "Orégano", "Rosa", "Sándalo", "Sándalo Hawaiano", "Tomillo" ]
-  }
+    {aceite:"Abeto Blanco"},
+    {aceite:"Albahaca"},
+    {aceite:"Arborvitae"},
+    {aceite:"Baya de Enebro"},
+    {aceite:"Bergamota"},
+    {aceite:"Cedro"},
+    {aceite:"Cilantro"},
+    {aceite:"Ciprés"},
+    {aceite:"Geranio"},
+    {aceite:"Hierba Limonera"},
+    {aceite:"Hinojo"},
+    {aceite:"Incienso"},
+    {aceite:"Jazmín"},
+    {aceite:"Jengibre"},
+    {aceite:"Lavanda"},
+    {aceite:"Lima"},
+    {aceite:"Mejorana"},
+    {aceite:"Melaleuca"},
+    {aceite:"Melissa"},
+    {aceite:"Mirra"},
+    {aceite:"Nardo"},
+    {aceite:"Orégano"},
+    {aceite:"Rosa"},
+    {aceite:"Sándalo"},
+    {aceite:"Sándalo Hawaiano"},
+    {aceite:"Tomillo"}
 ];

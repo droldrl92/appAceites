@@ -9,21 +9,76 @@
 
 
 <ion-content padding>
+  <h2>Elige los aceites necesarios:</h2>
+  <br>
+  <button ion-button block color="doterra" (click)="Personificador()">Aceite Personificador</button>
+  <button ion-button block color="doterra" (click)="Mejorador()">Aceite Mejorador/Potenciador</button>
+  <button ion-button block color="doterra" (click)="Ecualizador()">Aceite Ecualizador/Igualador</button>
+  <button ion-button block color="doterra" (click)="Modificador()">Aceite Modificador</button>
 
-  <ion-item>
-    <ion-label>Personificadores</ion-label>
-    <ion-select [(ngModel)]="personificadores1" okText="Aceptar" cancelText="Cancelar" multiple="true"
-                placeholder="Selecciona uno." (ionChange)="mostrarCambio()">
-      <ion-option *ngFor="let aceite of personificadores" [value]="aceite.aceite">{{aceite.aceite}}</ion-option>
-    </ion-select>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Modificadores</ion-label>
-    <ion-select [(ngModel)]="modificadores1" okText="Aceptar" cancelText="Cancelar" multiple="true"
-                placeholder="Selecciona uno." (ionChange)="mostrarCambio()" >
-      <ion-option *ngFor="let aceite of modificadores" [value]="aceite.aceite">{{aceite.aceite}}</ion-option>
-    </ion-select>
-  </ion-item>
+  <h4 padding>
+      Aproximación.
+  </h4>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div><h6>Clasificación</h6></div>
+        </ion-col>
+        <ion-col>
+          <div><h6>Porcentaje</h6></div>
+        </ion-col>
+        <ion-col>
+          <div><h6>Gotas</h6></div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>Personificador</div>
+        </ion-col>
+        <ion-col>
+          <div>1 - 5 %</div>
+        </ion-col>
+        <ion-col>
+          <div>3 of 3</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>Potenciador</div>
+        </ion-col>
+        <ion-col>
+          <div>50 - 80 %</div>
+        </ion-col>
+        <ion-col>
+          <div>3 of 3</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>Ecualizador</div>
+        </ion-col>
+        <ion-col>
+          <div>10 - 15 %</div>
+        </ion-col>
+        <ion-col>
+          <div>3 of 3</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>Modificador</div>
+        </ion-col>
+        <ion-col>
+          <div>5 - 8 %</div>
+        </ion-col>
+        <ion-col>
+          <div>3 of 3</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
 </ion-content>
+
+<ion-footer  >
+  <p >El aproximado de gotas por tipo de aceite es para una mezcla de 10 ml.</p>
+</ion-footer>

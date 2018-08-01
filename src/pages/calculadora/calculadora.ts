@@ -75,7 +75,7 @@ export class CalculadoraPage {
           handler: data => {
             if (parseFloat(data.precioprompt) && ( parseFloat(data.precioprompt) > 0 )) {
               this.precio = parseFloat(data.precioprompt);
-              this.total = (this.precio / this.gotas) * 2;
+              this.total = parseFloat(((this.precio / this.gotas) * 2).toPrecision(6));
             }else{
               this.noEsNumero();
               return false;
