@@ -15,6 +15,10 @@ export class ClasificacionPage {
   modificadores:Aceite[] = [];
   ecualizadores:Aceite[] = [];
   mejoradores:Aceite[] = [];
+  personificador:number = 0;
+  mejorador:number = 0;
+  ecualizador:number = 0;
+  modificador:number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
     this.personificadores = Personificadores;
@@ -22,6 +26,7 @@ export class ClasificacionPage {
     this.ecualizadores = Ecualizadores;
     this.mejoradores = Mejoradores;
   }
+
   Personificador() {
     let alert = this.alertCtrl.create();
     alert.setTitle('Elige los aceites personificadores');
@@ -29,8 +34,8 @@ export class ClasificacionPage {
     for (let key in this.personificadores) {
       alert.addInput({
         type: 'checkbox',
-        label: ' '+this.personificadores[key].aceite,
-        value: 'value1',
+        label: this.personificadores[key].aceite,
+        value: this.personificadores[key].aceite
       });
     }
 
@@ -39,15 +44,20 @@ export class ClasificacionPage {
       text: 'Aceptar',
       handler: data => {
         console.log('Checkbox data:', data);
-        if (data.length > 4) {
-            console.log ('entramos')
+        if (data.length > 1) {
             let alert = this.alertCtrl.create({
               title: 'Cantidad de Aceites',
-              subTitle: 'Se recomienda solo ingresar máximo 4 aceites.',
+              subTitle: 'Se recomienda solo ingresar máximo 1 aceites.',
               buttons: ['OK']
             });
             alert.present();
             return false;
+        }
+        else
+        {
+          if (data.length == 1) {
+              this.personificador = Math.ceil(0.05*16);
+          }
         }
       }
     });
@@ -63,8 +73,8 @@ export class ClasificacionPage {
     for (let key in this.modificadores) {
       alert.addInput({
         type: 'checkbox',
-        label: ' '+this.modificadores[key].aceite,
-        value: 'value1',
+        label: this.modificadores[key].aceite,
+        value: this.modificadores[key].aceite
       });
     }
 
@@ -73,15 +83,19 @@ export class ClasificacionPage {
       text: 'Aceptar',
       handler: data => {
         console.log('Checkbox data:', data);
-        if (data.length > 4) {
-            console.log ('entramos')
+        if (data.length > 2) {
             let alert = this.alertCtrl.create({
               title: 'Cantidad de Aceites',
-              subTitle: 'Se recomienda solo ingresar máximo 4 aceites.',
+              subTitle: 'Se recomienda solo ingresar máximo 2 aceites.',
               buttons: ['OK']
             });
             alert.present();
             return false;
+        }else
+        {
+          if (data.length>=1) {
+                this.modificador = Math.ceil((0.08/data.length)*16);
+          }
         }
       }
     });
@@ -97,8 +111,8 @@ export class ClasificacionPage {
     for (let key in this.ecualizadores) {
       alert.addInput({
         type: 'checkbox',
-        label: ' '+this.ecualizadores[key].aceite,
-        value: 'value1',
+        label: this.ecualizadores[key].aceite,
+        value: this.ecualizadores[key].aceite,
       });
     }
 
@@ -107,15 +121,19 @@ export class ClasificacionPage {
       text: 'Aceptar',
       handler: data => {
         console.log('Checkbox data:', data);
-        if (data.length > 4) {
-            console.log ('entramos')
+        if (data.length > 3) {
             let alert = this.alertCtrl.create({
               title: 'Cantidad de Aceites',
-              subTitle: 'Se recomienda solo ingresar máximo 4 aceites.',
+              subTitle: 'Se recomienda solo ingresar máximo 3 aceites.',
               buttons: ['OK']
             });
             alert.present();
             return false;
+        }else
+        {
+          if (data.length>=1) {
+                this.ecualizador = Math.ceil((0.15/data.length)*16);
+          }
         }
       }
     });
@@ -131,8 +149,8 @@ export class ClasificacionPage {
     for (let key in this.mejoradores) {
       alert.addInput({
         type: 'checkbox',
-        label: ' '+this.mejoradores[key].aceite,
-        value: 'value1',
+        label: this.mejoradores[key].aceite,
+        value: this.mejoradores[key].aceite,
       });
     }
 
@@ -141,15 +159,20 @@ export class ClasificacionPage {
       text: 'Aceptar',
       handler: data => {
         console.log('Checkbox data:', data);
-        if (data.length > 4) {
-            console.log ('entramos')
+        if (data.length > 14) {
             let alert = this.alertCtrl.create({
               title: 'Cantidad de Aceites',
-              subTitle: 'Se recomienda solo ingresar máximo 4 aceites.',
+              subTitle: 'Se recomienda solo ingresar máximo 14 aceites.',
               buttons: ['OK']
             });
             alert.present();
             return false;
+        }
+        else
+        {
+          if (data.length>=1) {
+                this.mejorador = Math.ceil((0.80/data.length)*16);
+          }
         }
       }
     });
@@ -157,8 +180,15 @@ export class ClasificacionPage {
 
     });
   }
+
+  reiniciar(){
+    this.mejorador = 0;
+    this.ecualizador = 0;
+    this.modificador = 0;
+    this.personificador= 0;
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClasificacionPage');
   }
-
+  
 }

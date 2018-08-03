@@ -40,28 +40,33 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222,
   doterra:    #7c5d9c,
-  green:      #287e05
+  green:      #287e05,
+  dosuave:    #9e8ab4
 );
+
+
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
+$tabs-ios-tab-icon-color-active:#5d328b;
+$tabs-ios-tab-color-active:#5d328b;
 
-
-
-
+$button-round-border-radius: 25px 10px;
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
+$tabs-md-tab-icon-color-active:#5d328b;
+$tabs-md-tab-color-active:#5d328b;
 
 
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
+$tabs-wp-tab-icon-color-active: #5d328b;
+$tabs-wp-tab-color-active: #5d328b;
 
 
 
@@ -88,3 +93,14 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+
+ion-title{
+  background-color: color($colors,doterra);
+  color: gold;
+}
+
+ion-title p{
+  font-size: 20px;
+  color: white;
+}

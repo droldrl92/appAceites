@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Aceites Esenciales</ion-title>
+    <ion-title><p>Aceites Esenciales</p></ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -10,25 +10,24 @@
 
 <ion-content padding>
   <h2>Elige los aceites necesarios:</h2>
-  <br>
-  <button ion-button block color="doterra" (click)="Personificador()">Aceite Personificador</button>
-  <button ion-button block color="doterra" (click)="Mejorador()">Aceite Mejorador/Potenciador</button>
-  <button ion-button block color="doterra" (click)="Ecualizador()">Aceite Ecualizador/Igualador</button>
-  <button ion-button block color="doterra" (click)="Modificador()">Aceite Modificador</button>
+  <button ion-button round block color="doterra" (click)="Personificador()">Aceite Personificador</button>
+  <button ion-button round block color="doterra" (click)="Mejorador()">Aceite Mejorador/Potenciador</button>
+  <button ion-button round block color="doterra" (click)="Ecualizador()">Aceite Ecualizador/Igualador</button>
+  <button ion-button round block color="doterra" (click)="Modificador()">Aceite Modificador</button>
 
-  <h4 padding>
+  <h4>
       Aproximación.
   </h4>
     <ion-grid>
       <ion-row>
-        <ion-col>
-          <div><h6>Clasificación</h6></div>
+        <ion-col >
+          <div class="cabecera">Clasificación</div>
         </ion-col>
         <ion-col>
-          <div><h6>Porcentaje</h6></div>
+          <div class="cabecera">Porcentaje</div>
         </ion-col>
         <ion-col>
-          <div><h6>Gotas</h6></div>
+          <div class="cabecera">Gotas por Aceite</div>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -39,7 +38,7 @@
           <div>1 - 5 %</div>
         </ion-col>
         <ion-col>
-          <div>3 of 3</div>
+          <div>{{personificador}}</div>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -50,7 +49,7 @@
           <div>50 - 80 %</div>
         </ion-col>
         <ion-col>
-          <div>3 of 3</div>
+          <div>{{mejorador}}</div>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -61,7 +60,7 @@
           <div>10 - 15 %</div>
         </ion-col>
         <ion-col>
-          <div>3 of 3</div>
+          <div>{{ecualizador}}</div>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -72,13 +71,17 @@
           <div>5 - 8 %</div>
         </ion-col>
         <ion-col>
-          <div>3 of 3</div>
+          <div>{{modificador}}</div>
         </ion-col>
       </ion-row>
     </ion-grid>
-
+    <br>
+    <button ion-button color="doterra"
+          (click)="reiniciar()">
+      Reiniciar Cálculo
+    </button>
 </ion-content>
 
-<ion-footer  >
-  <p >El aproximado de gotas por tipo de aceite es para una mezcla de 10 ml.</p>
+<ion-footer no-border>
+  <p>El aproximado de gotas por clasificacion, <br> es para una mezcla aproximada de 1ml por 9ml aceite portador.</p>
 </ion-footer>
