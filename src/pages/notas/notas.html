@@ -9,4 +9,94 @@
 
 <ion-content padding>
 
+  <h2>Selecciona los aceites por notas:</h2>
+
+  <div class="triangulo_sup">
+    <button ion-button round block color="doterra" (click)="Alta()">Notas Alta</button>
+    <button ion-button round block color="doterra" (click)="MediaAlta()">Notas Alta a Medias</button>
+    <button ion-button round block color="doterra" (click)="Media()">Notas Medias</button>
+    <button ion-button round block color="doterra" (click)="MediaBase()">Notas Medias a Base</button>
+    <button ion-button round block color="doterra" (click)="Base()">Notas Base</button>
+  </div>
+
+  <h4>
+      Aproximación.
+  </h4>
+    <ion-grid>
+      <ion-row>
+        <ion-col >
+          <div class="cabecera">Notas</div>
+        </ion-col>
+        <ion-col>
+          <div class="cabecera">Porcentaje</div>
+        </ion-col>
+        <ion-col>
+          <div class="cabecera">Gotas por Aceite</div>
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="Base()">
+        <ion-col>
+          <div>Base</div>
+        </ion-col>
+        <ion-col>
+          <div>5 - 20 %</div>
+        </ion-col>
+        <ion-col>
+          <div>{{base}}</div>
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="MediaBase()">
+        <ion-col>
+          <div>Medias - Base</div>
+        </ion-col>
+        <ion-col>
+          <div>20 - 80 %</div>
+        </ion-col>
+        <ion-col>
+          <div>{{mediabase}}</div>
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="Media()">
+        <ion-col>
+          <div>Medias</div>
+        </ion-col>
+        <ion-col>
+          <div>50 - 80 %</div>
+        </ion-col>
+        <ion-col>
+          <div>{{media}}</div>
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="MediaAlta()">
+        <ion-col>
+          <div>Medias - Alta</div>
+        </ion-col>
+        <ion-col>
+          <div>20 - 80 %</div>
+        </ion-col>
+        <ion-col>
+          <div>{{mediaalta}}</div>
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="Alta()">
+        <ion-col>
+          <div>Alta</div>
+        </ion-col>
+        <ion-col>
+          <div>5 - 20 %</div>
+        </ion-col>
+        <ion-col>
+          <div>{{alta}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  <button ion-button color="doterra"
+        (click)="Reiniciar()">
+    Reiniciar Cálculo
+  </button>
 </ion-content>
+
+<ion-footer no-border>
+  <p>El aproximado de gotas por nota, <br> es para una mezcla aproximada de 1ml por 9ml aceite portador.</p>
+</ion-footer>

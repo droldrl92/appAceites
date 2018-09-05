@@ -1,3 +1,31 @@
 page-notas {
 
 }
+
+p{
+  text-align: center;
+  font-size: 11px;
+}
+div {
+  text-align: center;
+}
+
+ion-footer{
+  background-color: #9e8ab4;
+  text-shadow: 1px 1px 0px black;
+  color: white;
+}
+
+ion-row {
+  border: 2px solid #9e8ab4;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+button{
+  border-color: 1px solid black;
+}
+.cabecera{
+  font-weight: bold;
+}

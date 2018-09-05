@@ -9,7 +9,7 @@
 
 
 <ion-content padding>
-  <h2>Elige los aceites necesarios:</h2>
+  <h2>Selecciona los aceites necesarios:</h2>
   <button ion-button round block color="doterra" (click)="Personificador()">Aceite Personificador</button>
   <button ion-button round block color="doterra" (click)="Mejorador()">Aceite Mejorador/Potenciador</button>
   <button ion-button round block color="doterra" (click)="Ecualizador()">Aceite Ecualizador/Igualador</button>
@@ -30,7 +30,7 @@
           <div class="cabecera">Gotas por Aceite</div>
         </ion-col>
       </ion-row>
-      <ion-row>
+      <ion-row (click)="Personificador()">
         <ion-col>
           <div>Personificador</div>
         </ion-col>
@@ -41,7 +41,7 @@
           <div>{{personificador}}</div>
         </ion-col>
       </ion-row>
-      <ion-row>
+      <ion-row (click)="Mejorador()">
         <ion-col>
           <div>Potenciador</div>
         </ion-col>
@@ -52,7 +52,7 @@
           <div>{{mejorador}}</div>
         </ion-col>
       </ion-row>
-      <ion-row>
+      <ion-row (click)="Ecualizador()">
         <ion-col>
           <div>Ecualizador</div>
         </ion-col>
@@ -63,7 +63,7 @@
           <div>{{ecualizador}}</div>
         </ion-col>
       </ion-row>
-      <ion-row>
+      <ion-row (click)="Modificador()">
         <ion-col>
           <div>Modificador</div>
         </ion-col>
@@ -83,5 +83,5 @@
 </ion-content>
 
 <ion-footer no-border>
-  <p>El aproximado de gotas por clasificacion, <br> es para una mezcla aproximada de 1ml por 9ml aceite portador.</p>
+  <p>El aproximado de gotas por clasificación, <br> es para una mezcla aproximada de 1ml por 9ml aceite portador.</p>
 </ion-footer>
