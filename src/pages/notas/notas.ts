@@ -20,9 +20,11 @@ export class NotasPage {
   mediabase:number = 0;
   base:number = 0;
 
-  auxmediabase:number = 0;
-  auxmedia:number = 0;
+  auxalta:number = 0;
   auxmediaalta:number = 0;
+  auxmedia:number = 0;
+  auxmediabase:number = 0;
+  auxbase:number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
     this.altas = Alta;
@@ -52,7 +54,8 @@ export class NotasPage {
       text: 'Aceptar',
       handler: data => {
         console.log('Checkbox data Alta:', data);
-        if (data.length > 2) {
+        this.auxalta = data.length;
+        if (this.auxalta > 2) {
             let alert = this.alertCtrl.create({
               title: 'Cantidad de Aceites',
               subTitle: 'Se recomienda solo ingresar máximo 2 aceites.',
@@ -63,8 +66,13 @@ export class NotasPage {
         }
         else
         {
-          if (data.length >= 1) {
-              this.alta = Math.ceil((0.10/data.length)*16);
+          if (this.auxalta >= 1) {
+              if (this.base!=0) {
+                  this.alta = Math.ceil((0.10/this.auxalta)*16);
+                  this.base = Math.ceil((0.10/this.auxbase)*16);
+              }else{
+                this.alta = Math.ceil((0.20/this.auxalta)*16);
+              }
           }
         }
       }
@@ -75,6 +83,9 @@ export class NotasPage {
       handler: data => {
         console.log('Checkbox data Alta:', data);
         this.alta = 0;
+        if (this.base!=0) {
+            this.base = Math.ceil((0.20/this.auxbase)*16);
+        }
       }
     });
     alert.present().then(() => {
@@ -98,7 +109,8 @@ export class NotasPage {
       text: 'Aceptar',
       handler: data => {
         console.log('Checkbox data Base:', data);
-        if (data.length > 2) {
+        this.auxbase = data.length;
+        if (this.auxbase > 2) {
             let alert = this.alertCtrl.create({
               title: 'Cantidad de Aceites',
               subTitle: 'Se recomienda solo ingresar máximo 2 aceites.',
@@ -109,8 +121,13 @@ export class NotasPage {
         }
         else
         {
-          if (data.length >= 1) {
-              this.base = Math.ceil((0.10/data.length)*16);
+          if (this.auxbase >= 1) {
+            if (this.alta!=0) {
+                this.alta = Math.ceil((0.10/this.auxalta)*16);
+                this.base = Math.ceil((0.10/this.auxbase)*16);
+            }else{
+              this.base = Math.ceil((0.20/this.auxbase)*16);
+            }
           }
         }
       }
@@ -123,6 +140,9 @@ export class NotasPage {
       handler: data => {
         console.log('Checkbox data base:', data);
         this.base = 0;
+        if (this.alta!=0) {
+            this.alta = Math.ceil((0.20/this.auxalta)*16);
+        }
       }
     });
 
@@ -148,7 +168,8 @@ export class NotasPage {
       text: 'Aceptar',
       handler: data => {
         console.log('Checkbox data Media:', data);
-        if (data.length > 4) {
+        this.auxmedia = data.length;
+        if (this.auxmedia > 4) {
             let alert = this.alertCtrl.create({
               title: 'Cantidad de Aceites',
               subTitle: 'Se recomienda solo ingresar máximo 4 aceites.',
@@ -159,10 +180,25 @@ export class NotasPage {
         }
         else
         {
-          if (data.length >= 1) {
-            this.auxmedia = data.length;
+          if (this.auxmedia >= 1) {
 
-              this.media = Math.ceil((0.25/data.length)*16);
+              if (this.mediaalta!=0 && this.mediabase!=0) {
+                  this.media = Math.ceil((0.25/this.auxmedia)*16);
+                  this.mediaalta = Math.ceil((0.25/this.auxmediaalta)*16);
+                  this.mediabase = Math.ceil((0.25/this.auxmediabase)*16);
+              }else{
+                if (this.mediaalta!=0) {
+                    this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
+                    this.media = Math.ceil((0.40/this.auxmedia)*16);
+                }else{
+                  if (this.mediabase!=0) {
+                    this.mediabase = Math.ceil((0.40/this.auxmediabase)*16);
+                    this.media = Math.ceil((0.40/this.auxmedia)*16);
+                  }else{
+                    this.media = Math.ceil((0.80/data.length)*16);
+                  }
+                }
+              }
           }
         }
       }
@@ -173,7 +209,18 @@ export class NotasPage {
       text: 'Reiniciar',
       handler: data => {
         console.log('Checkbox data Alta:', data);
-        this.alta = 0;
+        this.media = 0;
+        if (this.mediaalta!=0 && this.mediabase!=0) {
+            this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
+            this.mediabase = Math.ceil((0.40/this.auxmediabase)*16);
+        }else{
+          if (this.mediaalta!=0) {
+              this.mediaalta = Math.ceil((0.80/this.auxmediaalta)*16);
+          }
+          if (this.mediabase!=0) {
+              this.mediabase = Math.ceil((0.80/this.auxmediabase)*16);
+          }
+        }
       }
     });
 
@@ -199,7 +246,8 @@ export class NotasPage {
       text: 'Aceptar',
       handler: data => {
         console.log('Checkbox data Media-Alta:', data);
-        if (data.length > 4) {
+        this.auxmediaalta = data.length;
+        if (this.auxmediaalta > 4) {
             let alert = this.alertCtrl.create({
               title: 'Cantidad de Aceites',
               subTitle: 'Se recomienda solo ingresar máximo 4 aceites.',
@@ -210,10 +258,26 @@ export class NotasPage {
         }
         else
         {
-          if (data.length >= 1) {
-            this.auxmedia = data.length;
+          if (this.auxmediaalta >= 1) {
 
-              this.mediaalta = Math.ceil((0.25/data.length)*16);
+            if (this.media!=0 && this.mediabase!=0) {
+                this.media = Math.ceil((0.25/this.auxmedia)*16);
+                this.mediaalta = Math.ceil((0.25/this.auxmediaalta)*16);
+                this.mediabase = Math.ceil((0.25/this.auxmediabase)*16);
+            }else{
+              if (this.media!=0) {
+                  this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
+                  this.media = Math.ceil((0.40/this.auxmedia)*16);
+              }else{
+                if (this.mediabase!=0) {
+                  this.mediabase = Math.ceil((0.40/this.auxmediabase)*16);
+                  this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
+                }else{
+                  this.mediaalta = Math.ceil((0.80/this.auxmediaalta)*16);
+                }
+              }
+            }
+
           }
         }
       }
@@ -225,6 +289,17 @@ export class NotasPage {
       handler: data => {
         console.log('Checkbox data Alta:', data);
         this.mediaalta = 0;
+        if (this.media!=0 && this.mediabase!=0) {
+            this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
+            this.media = Math.ceil((0.40/this.auxmedia)*16);
+        }else{
+          if (this.media!=0) {
+              this.media = Math.ceil((0.80/this.auxmedia)*16);
+          }
+          if (this.mediabase!=0) {
+              this.mediabase = Math.ceil((0.80/this.auxmediabase)*16);
+          }
+        }
       }
     });
 
@@ -250,7 +325,8 @@ export class NotasPage {
       text: 'Aceptar',
       handler: data => {
         console.log('Checkbox data Media:', data);
-        if (data.length > 4) {
+        this.auxmediabase = data.length;
+        if (this.auxmediabase > 4) {
             let alert = this.alertCtrl.create({
               title: 'Cantidad de Aceites',
               subTitle: 'Se recomienda solo ingresar máximo 4 aceites.',
@@ -261,10 +337,26 @@ export class NotasPage {
         }
         else
         {
-          if (data.length >= 1) {
-            this.auxmedia = data.length;
+          if (this.auxmediabase >= 1) {
 
-              this.mediabase = Math.ceil((0.25/data.length)*16);
+            if (this.mediaalta!=0 && this.media!=0) {
+                this.media = Math.ceil((0.25/this.auxmedia)*16);
+                this.mediaalta = Math.ceil((0.25/this.auxmediaalta)*16);
+                this.mediabase = Math.ceil((0.25/this.auxmediabase)*16);
+            }else{
+              if (this.mediaalta!=0) {
+                  this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
+                  this.mediabase = Math.ceil((0.40/this.auxmediabase)*16);
+              }else{
+                if (this.media!=0) {
+                  this.mediabase = Math.ceil((0.40/this.auxmediabase)*16);
+                  this.media = Math.ceil((0.40/this.auxmedia)*16);
+                }else{
+                  this.mediabase = Math.ceil((0.80/this.auxmediabase)*16);
+                }
+              }
+            }
+
           }
         }
       }
@@ -276,6 +368,17 @@ export class NotasPage {
       handler: data => {
         console.log('Checkbox data MediBase:', data);
         this.mediabase = 0;
+        if (this.media!=0 && this.mediaalta!=0) {
+            this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
+            this.media = Math.ceil((0.40/this.auxmedia)*16);
+        }else{
+          if (this.media!=0) {
+              this.media = Math.ceil((0.80/this.auxmedia)*16);
+          }
+          if (this.mediaalta!=0) {
+              this.mediaalta = Math.ceil((0.80/this.auxmediaalta)*16);
+          }
+        }
       }
     });
 
