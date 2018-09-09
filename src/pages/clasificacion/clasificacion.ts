@@ -39,7 +39,13 @@ export class ClasificacionPage {
       });
     }
 
-    alert.addButton('Cancelar');
+    alert.addButton({
+      text: 'Reiniciar',
+      handler: data => {
+        console.log('Checkbox data:', data);
+        this.personificador = 0;
+      }
+    });
     alert.addButton({
       text: 'Aceptar',
       handler: data => {
@@ -78,7 +84,13 @@ export class ClasificacionPage {
       });
     }
 
-    alert.addButton('Cancelar');
+    alert.addButton({
+      text: 'Reiniciar',
+      handler: data => {
+        console.log('Checkbox data:', data);
+        this.modificador = 0;
+      }
+    });
     alert.addButton({
       text: 'Aceptar',
       handler: data => {
@@ -116,7 +128,13 @@ export class ClasificacionPage {
       });
     }
 
-    alert.addButton('Cancelar');
+    alert.addButton({
+      text: 'Reiniciar',
+      handler: data => {
+        console.log('Checkbox data:', data);
+        this.ecualizador = 0;
+      }
+    });
     alert.addButton({
       text: 'Aceptar',
       handler: data => {
@@ -154,7 +172,13 @@ export class ClasificacionPage {
       });
     }
 
-    alert.addButton('Cancelar');
+    alert.addButton({
+      text: 'Reiniciar',
+      handler: data => {
+        console.log('Checkbox data:', data);
+        this.mejorador = 0;
+      }
+    });
     alert.addButton({
       text: 'Aceptar',
       handler: data => {
@@ -190,5 +214,5 @@ export class ClasificacionPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClasificacionPage');
   }
-  
+
 }

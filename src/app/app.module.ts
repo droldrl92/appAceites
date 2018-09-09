@@ -10,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 import { CalculadoraPage } from "../pages/calculadora/calculadora";
 import { ClasificacionPage } from "../pages/clasificacion/clasificacion";
 import { NotasPage } from "../pages/notas/notas";
+import { SistemasPage } from "../pages/sistemas/sistemas";
+import { ModalContentPage } from "../pages/sistemas/sistemas";
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { NotasPage } from "../pages/notas/notas";
     HomePage,
     CalculadoraPage,
     ClasificacionPage,
-    NotasPage
+    NotasPage,
+    SistemasPage,
+    ModalContentPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,9 @@ import { NotasPage } from "../pages/notas/notas";
     HomePage,
     CalculadoraPage,
     ClasificacionPage,
-    NotasPage
+    NotasPage,
+    SistemasPage,
+    ModalContentPage
   ],
   providers: [
     StatusBar,

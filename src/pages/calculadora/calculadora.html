@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title><p>Aceites Esenciales</p></ion-title>
+    <ion-title><p>Calculadora de Precios</p></ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -25,10 +25,10 @@
       Introduce el precio del aceite esencial
     </button>
 
-      <ion-label><strong>El precio del aceite es: ${{precio}}</strong></ion-label>
+      <ion-label (click) = "showPrompt()"><strong>El precio del aceite es: ${{precio}}</strong></ion-label>
 
       <h1>El precio por gota es:</h1>
-      <h2>${{total}}</h2>
+      <h2 (click) = "showPrompt()">${{total}}</h2>
 
     <br>
     <button ion-button color="doterra"
@@ -38,5 +38,5 @@
 </ion-content>
 
 <ion-footer>
-  <p>Los precios calculados son solamente una recomendación para los socios.</p>
+  <p>Los precios calculados son una recomendación para la venta.</p>
 </ion-footer>

@@ -49,6 +49,16 @@ export class NotasPage {
       });
     }
 
+    alert.addButton({
+      text: 'Reiniciar',
+      handler: data => {
+        console.log('Checkbox data Alta:', data);
+        this.alta = 0;
+        if (this.base!=0) {
+            this.base = Math.ceil((0.20/this.auxbase)*16);
+        }
+      }
+    });
 
     alert.addButton({
       text: 'Aceptar',
@@ -77,17 +87,6 @@ export class NotasPage {
         }
       }
     });
-    alert.addButton('Cancelar');
-    alert.addButton({
-      text: 'Reiniciar',
-      handler: data => {
-        console.log('Checkbox data Alta:', data);
-        this.alta = 0;
-        if (this.base!=0) {
-            this.base = Math.ceil((0.20/this.auxbase)*16);
-        }
-      }
-    });
     alert.present().then(() => {
 
     });
@@ -104,6 +103,17 @@ export class NotasPage {
         value: this.bases[key].aceite
       });
     }
+
+    alert.addButton({
+      text: 'Reiniciar',
+      handler: data => {
+        console.log('Checkbox data base:', data);
+        this.base = 0;
+        if (this.alta!=0) {
+            this.alta = Math.ceil((0.20/this.auxalta)*16);
+        }
+      }
+    });
 
     alert.addButton({
       text: 'Aceptar',
@@ -133,19 +143,6 @@ export class NotasPage {
       }
     });
 
-    alert.addButton('Cancelar');
-
-    alert.addButton({
-      text: 'Reiniciar',
-      handler: data => {
-        console.log('Checkbox data base:', data);
-        this.base = 0;
-        if (this.alta!=0) {
-            this.alta = Math.ceil((0.20/this.auxalta)*16);
-        }
-      }
-    });
-
     alert.present().then(() => {
 
     });
@@ -163,6 +160,24 @@ export class NotasPage {
       });
     }
 
+    alert.addButton({
+      text: 'Reiniciar',
+      handler: data => {
+        console.log('Checkbox data Alta:', data);
+        this.media = 0;
+        if (this.mediaalta!=0 && this.mediabase!=0) {
+            this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
+            this.mediabase = Math.ceil((0.40/this.auxmediabase)*16);
+        }else{
+          if (this.mediaalta!=0) {
+              this.mediaalta = Math.ceil((0.80/this.auxmediaalta)*16);
+          }
+          if (this.mediabase!=0) {
+              this.mediabase = Math.ceil((0.80/this.auxmediabase)*16);
+          }
+        }
+      }
+    });
 
     alert.addButton({
       text: 'Aceptar',
@@ -203,26 +218,6 @@ export class NotasPage {
         }
       }
     });
-    alert.addButton('Cancelar');
-
-    alert.addButton({
-      text: 'Reiniciar',
-      handler: data => {
-        console.log('Checkbox data Alta:', data);
-        this.media = 0;
-        if (this.mediaalta!=0 && this.mediabase!=0) {
-            this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
-            this.mediabase = Math.ceil((0.40/this.auxmediabase)*16);
-        }else{
-          if (this.mediaalta!=0) {
-              this.mediaalta = Math.ceil((0.80/this.auxmediaalta)*16);
-          }
-          if (this.mediabase!=0) {
-              this.mediabase = Math.ceil((0.80/this.auxmediabase)*16);
-          }
-        }
-      }
-    });
 
     alert.present().then(() => {
 
@@ -241,6 +236,24 @@ export class NotasPage {
       });
     }
 
+    alert.addButton({
+      text: 'Reiniciar',
+      handler: data => {
+        console.log('Checkbox data Alta:', data);
+        this.mediaalta = 0;
+        if (this.media!=0 && this.mediabase!=0) {
+            this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
+            this.media = Math.ceil((0.40/this.auxmedia)*16);
+        }else{
+          if (this.media!=0) {
+              this.media = Math.ceil((0.80/this.auxmedia)*16);
+          }
+          if (this.mediabase!=0) {
+              this.mediabase = Math.ceil((0.80/this.auxmediabase)*16);
+          }
+        }
+      }
+    });
 
     alert.addButton({
       text: 'Aceptar',
@@ -282,26 +295,6 @@ export class NotasPage {
         }
       }
     });
-    alert.addButton('Cancelar');
-
-    alert.addButton({
-      text: 'Reiniciar',
-      handler: data => {
-        console.log('Checkbox data Alta:', data);
-        this.mediaalta = 0;
-        if (this.media!=0 && this.mediabase!=0) {
-            this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
-            this.media = Math.ceil((0.40/this.auxmedia)*16);
-        }else{
-          if (this.media!=0) {
-              this.media = Math.ceil((0.80/this.auxmedia)*16);
-          }
-          if (this.mediabase!=0) {
-              this.mediabase = Math.ceil((0.80/this.auxmediabase)*16);
-          }
-        }
-      }
-    });
 
     alert.present().then(() => {
 
@@ -320,6 +313,24 @@ export class NotasPage {
       });
     }
 
+    alert.addButton({
+      text: 'Reiniciar',
+      handler: data => {
+        console.log('Checkbox data MediBase:', data);
+        this.mediabase = 0;
+        if (this.media!=0 && this.mediaalta!=0) {
+            this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
+            this.media = Math.ceil((0.40/this.auxmedia)*16);
+        }else{
+          if (this.media!=0) {
+              this.media = Math.ceil((0.80/this.auxmedia)*16);
+          }
+          if (this.mediaalta!=0) {
+              this.mediaalta = Math.ceil((0.80/this.auxmediaalta)*16);
+          }
+        }
+      }
+    });
 
     alert.addButton({
       text: 'Aceptar',
@@ -357,26 +368,6 @@ export class NotasPage {
               }
             }
 
-          }
-        }
-      }
-    });
-    alert.addButton('Cancelar');
-
-    alert.addButton({
-      text: 'Reiniciar',
-      handler: data => {
-        console.log('Checkbox data MediBase:', data);
-        this.mediabase = 0;
-        if (this.media!=0 && this.mediaalta!=0) {
-            this.mediaalta = Math.ceil((0.40/this.auxmediaalta)*16);
-            this.media = Math.ceil((0.40/this.auxmedia)*16);
-        }else{
-          if (this.media!=0) {
-              this.media = Math.ceil((0.80/this.auxmedia)*16);
-          }
-          if (this.mediaalta!=0) {
-              this.mediaalta = Math.ceil((0.80/this.auxmediaalta)*16);
           }
         }
       }

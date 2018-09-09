@@ -17,5 +17,6 @@ export const Modificadores = [
     {aceite: "Sándalo"},
     {aceite: "Sándalo Hawaiano"},
     {aceite: "Semilla de Cilantro"},
-    {aceite: "Toronja"}
+    {aceite: "Toronja"},
+    {aceite: "Ylang-Ylang"}
 ];

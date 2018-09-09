@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><p>Aceites por Sistemas</p></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-list-header>
+      Sistemas del Cuerpo
+    </ion-list-header>
+    <a ion-item (click)="abrirSistema({sistemaNum: 0})">
+      Sistema Cardiovascular
+    </a>
+    <a ion-item (click)="abrirSistema({sistemaNum: 1})">
+      Sistema Digestivo
+    </a>
+    <a ion-item (click)="abrirSistema({sistemaNum: 2})">
+      Equilibrio Emocional
+    </a>
+    <a ion-item (click)="abrirSistema({sistemaNum: 3})">
+      Sistema Hormonal
+    </a>
+    <a ion-item (click)="abrirSistema({sistemaNum: 4})">
+      Sistema Inmunológico
+    </a>
+    <a ion-item (click)="abrirSistema({sistemaNum: 5})">
+      Músculos y Huesos
+    </a>
+    <a ion-item (click)="abrirSistema({sistemaNum: 6})">
+      Sistema Nervioso
+    </a>
+    <a ion-item (click)="abrirSistema({sistemaNum: 7})">
+      Sistema Respiratorio
+    </a>
+    <a ion-item (click)="abrirSistema({sistemaNum: 8})">
+      Piel y Cabello
+    </a>
+  </ion-list>
+
+</ion-content>
