@@ -6,7 +6,16 @@ page-modal{
   .titular{
     font-weight: bold;
     font-size: 18px;
-    padding-bottom: -10px;
   }
 
+  .nota{
+  white-space: normal;
+  margin: 0 auto;
+  width: 65%;
+  color: black;
+  }
+
+  .salto{
+    white-space: pre-line;
+  }
 }
