@@ -6,6 +6,7 @@ import { Modificadores } from "../../data/data.modificador";
 import { Mejoradores } from "../../data/data.mejorador";
 import { Ecualizadores } from "../../data/data.ecualizador";
 
+
 @Component({
   selector: 'page-clasificacion',
   templateUrl: 'clasificacion.html',

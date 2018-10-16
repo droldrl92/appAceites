@@ -45,13 +45,12 @@ $colors: (
 );
 
 
-
-
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 $tabs-ios-tab-icon-color-active:#5d328b;
 $tabs-ios-tab-color-active:#5d328b;
+
 
 // App Material Design Variables
 // --------------------------------------------------
@@ -96,7 +95,6 @@ $tabs-wp-tab-color-active: #5d328b;
 
 ion-title{
   background-color: color($colors,doterra);
-  color: gold;
 }
 
 ion-title p{

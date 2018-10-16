@@ -12,6 +12,7 @@ import { ClasificacionPage } from "../pages/clasificacion/clasificacion";
 import { NotasPage } from "../pages/notas/notas";
 import { SistemasPage } from "../pages/sistemas/sistemas";
 import { ModalContentPage } from "../pages/sistemas/sistemas";
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ModalContentPage } from "../pages/sistemas/sistemas";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ScreenOrientation
   ]
 })
 export class AppModule {}
